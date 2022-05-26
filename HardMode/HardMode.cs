@@ -1,16 +1,9 @@
 ﻿using HarmonyLib;
 using MelonLoader;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TMPro;
-using UnityEngine;
 
 namespace HardMode
 {
-    public class ModTest : MelonMod
+    public class HardModeMod : MelonMod
     {
         //Redefines Backpack tile gain to be flatter and more difficult early game
         [HarmonyPatch(typeof(Player), nameof(Player.AddExperience))]

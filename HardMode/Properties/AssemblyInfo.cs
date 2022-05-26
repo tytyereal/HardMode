@@ -39,5 +39,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-[assembly: MelonInfo(typeof(ModTest), "HardMode", "1.0.0", "tytyereal")]
+[assembly: MelonInfo(typeof(HardModeMod), "HardMode", "1.0.0", "tytyereal")]
 [assembly: MelonGame("", "")]
