@@ -2,7 +2,7 @@
 
 A simple mod for [Backpack Hero](https://store.steampowered.com/app/1970580/Backpack_Hero/). With the goal of making the game much more difficult but still fair.
 
-## Tweaks
+### Tweaks
 * 20 starting max HP
 * Base 2 AP
 * Reduces items avalible after battle from 3 to 2
