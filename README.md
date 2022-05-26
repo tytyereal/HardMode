@@ -12,7 +12,7 @@ A mod for [Backpack Hero](https://store.steampowered.com/app/1970580/Backpack_He
 ### Installing
 
 * Install MelonLoader ([Guide](https://melonwiki.xyz))
-* Add the dll to your mods folder located in Backpack Hero.
+* Add the dll to your mods folder located in Backpack Hero's game folder.
 
 ## Version History
 
