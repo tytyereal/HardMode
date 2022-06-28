@@ -1,6 +1,12 @@
 # Hard Mode - By tytyereal
 
-A mod for [Backpack Hero](https://store.steampowered.com/app/1970580/Backpack_Hero/). With the goal of making the game much more difficult but still fair.
+A simple mod for [Backpack Hero](https://store.steampowered.com/app/1970580/Backpack_Hero/). With the goal of making the game much more difficult but still fair.
+
+### Tweaks
+* 20 starting max HP
+* Base 2 AP
+* Reduces items avalible after battle from 3 to 2
+* Slows the speed you gain new backpack slots
 
 ## Getting Started
 
@@ -12,7 +18,7 @@ A mod for [Backpack Hero](https://store.steampowered.com/app/1970580/Backpack_He
 ### Installing
 
 * Install MelonLoader ([Guide](https://melonwiki.xyz))
-* Add the dll to your mods folder located in Backpack Hero.
+* Add the dll to your mods folder located in Backpack Hero's game folder.
 
 ## Version History
 
