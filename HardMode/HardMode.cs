@@ -3,21 +3,22 @@ using MelonLoader;
 
 namespace HardMode
 {
-    public class HardModeMod : MelonMod
+    public class ModTest : MelonMod
     {
         //Redefines Backpack tile gain to be flatter and more difficult early game
-        [HarmonyPatch(typeof(Player), nameof(Player.AddExperience))]
+        [HarmonyPatch(typeof(Player), "Start")]
         class TileLevelUpCountPatch
         {
-            static bool Prefix(ref Player __instance)
-            {
-                MelonLogger.Msg("Player.Start");
-                __instance.gridsToGain = new int[]
+            static void Postfix(ref Player __instance)
+            { //Standard Level Rewards: 4, 4, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 1
+                int[] newRewards =
                 {
-                    0, 0, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3
+                    3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3
                 };
-
-                return true;
+                for (int i = 0; i < __instance.chosenCharacter.levelUps.Count; ++i)
+                {
+                    __instance.chosenCharacter.levelUps[i].rewards[0].rewardValue = newRewards[i];
+                }
             }
         }
 
@@ -32,18 +33,16 @@ namespace HardMode
                     __instance.numOfItemsAllowedToTake = 2;
                 }
                 return true;
-
             }
         }
 
-        //Changes default AP per turn
-        [HarmonyPatch(typeof(Player), nameof(Player.NextTurn))]
+        //Limits your AP to 2
+        [HarmonyPatch(typeof(Player), "Start")]
         class ApChangePatch
         {
-            static bool Prefix(ref Player __instance)
+            static void Postfix(ref Player __instance)
             {
-                __instance.SetAP(2);
-                return false;
+                __instance.APperTurn = 2;
             }
         }
 
@@ -57,6 +56,7 @@ namespace HardMode
                 startNewOrMatt = true;
             }
         }
+
         //Checks if you are starting a matthew game
         [HarmonyPatch(typeof(MenuManager), nameof(MenuManager.LoadMatt))]
         class StartMattGameCheckPatch
@@ -66,6 +66,7 @@ namespace HardMode
                 startNewOrMatt = true;
             }
         }
+
         //Sets Max health to 20 if starting a new run
         [HarmonyPatch(typeof(Status), "Start")]
         class MaxHpPatch
